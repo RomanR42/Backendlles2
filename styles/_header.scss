@@ -1,0 +1,115 @@
+.header {
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left:0;
+    right: 0;
+    height: 40px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #808080;
+    background-color: #b0bec5;
+       
+    &__logo-link {
+         font-size: 20px;
+         text-decoration: none;
+         color: #000000;
+         cursor: pointer;
+         transition: color 0.4s;
+         &:hover {
+             color: #0000ff !important;
+         }
+    }
+    &__label {
+         cursor: pointer;
+         transition: color 0.4s;
+         &:hover {
+             color: #0000ff;
+         }
+    }
+    &__toggle-btns {
+         display: none;
+    }
+    &__toggle-btn {
+         border-radius: 10px;
+         outline: none;
+         border: 1px solid #0000ff;
+         padding: 0px 10px;
+         cursor: pointer;;
+    }
+    &__toggle-btn--active {
+         color:white;
+         background-color: #ff0000;
+    }
+    &__toggle-select {
+         display: none;
+    }
+    &__select-field {
+         border-radius: 5px;
+         outline: none;
+    }
+}
+.dark .header {
+    background-color: $darkTheme-background;
+    color: $darkTheme-header-color;
+    border-bottom: $darkTheme-header-color;
+    .header__logo-link {
+        color: $darkTheme-header-color;
+    }
+}
+.gray .header {
+    background-color: $grayTheme-background;
+    color: $grayTheme-header-color;
+    border-bottom: $grayTheme-border;
+    .header__logo-link {
+        color: $grayTheme-header-color;
+    }
+}
+@media screen and (max-width:1080px){
+    .header {
+        padding: 0px 15px;
+        height: 45px;
+        
+        &__logo-link {
+            font-size: 25px;
+        }
+        &__toggle-btns {
+            display: block;
+        }
+        &__toggle-btn {
+            margin-left: 25px;
+        }
+        &__toggle-radio {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width:640px){
+    .header {
+        padding: 0px 20px;
+        height: 55px;
+        &__logo-link {
+            font-size: 30px;
+        }        
+        &__toggle-btns {
+            display: none;
+        }
+        &__toggle-select {
+            display: block;
+        }
+    }
+}
+@media screen and (max-width:410px){
+    .header {
+     padding: 0px 15px;
+        &__logo-link {
+            font-size: 20px;
+        }      
+        &__select-field {
+            width:150px;
+            font-size: 14px;
+        }
+    }
+}
